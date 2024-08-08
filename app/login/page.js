@@ -3,13 +3,14 @@ import React from 'react';
 export default function Login() {
   return (
     <div style={styles.container}>
+      <div style={styles.overlay}></div>
       <div style={styles.box}>
-        <h2 style={styles.title}>LOGIN</h2>
-        <input style={styles.input} type="text" placeholder="Username" />
+        <h2 style={styles.title}>Login Form</h2>
+        <input style={styles.input} type="text" placeholder="hello@admin.com" />
         <input style={styles.input} type="password" placeholder="Password" />
-        <button style={styles.button}>SIGN IN</button>
+        <button style={styles.button}>LOGIN</button>
         <p style={styles.signupText}>
-          Don't have an account? <a href="#" style={styles.signupLink}>Sign up</a>
+          Don’t have an account? <a href="#" style={styles.signupLink}>Signup Now</a>
         </p>
       </div>
     </div>
@@ -22,13 +23,27 @@ const styles = {
     alignItems: 'center',
     justifyContent: 'center',
     height: '100vh',
-    backgroundColor: '#f9f6f1',
+    backgroundImage: 'url("/images/backgroundimage.png")',  // Update this path with your image's path
+    backgroundSize: 'cover',
+    backgroundPosition: 'center',
+    position: 'relative',
+  },
+  overlay: {
+    position: 'absolute',
+    top: 0,
+    left: 0,
+    right: 0,
+    bottom: 0,
+    backgroundColor: 'rgba(0, 0, 0, 0.7)', // Dark overlay with 50% opacity
+    zIndex: 1,
   },
   box: {
+    position: 'relative',
+    zIndex: 2,
     padding: '40px',
     width: '320px',
-    backgroundColor: 'white',
-    borderRadius: '20px',
+    backgroundColor: 'rgba(255, 255, 255, 0.9)', // Slightly transparent background
+    borderRadius: '15px',
     textAlign: 'center',
     boxShadow: '0 4px 8px rgba(0, 0, 0, 0.1)',
   },
@@ -36,7 +51,6 @@ const styles = {
     marginBottom: '20px',
     fontSize: '24px',
     color: '#333',
-    fontWeight: '500',
   },
   input: {
     display: 'block',
@@ -67,6 +81,5 @@ const styles = {
   signupLink: {
     color: '#c3c78e',
     textDecoration: 'none',
-    fontWeight: '500',
   },
 };
